@@ -38,5 +38,29 @@ def sua_potuancao(pontos):
     
 def cobra(tamanho_bloco, lista_cobra):
     for bloco in lista_cobra:
-        pygame.draw.rect(tela, verde[bloco[0]], bloco[1], tamanho_bloco, tamanho_bloco)
+        pygame.draw.rect(tela, verde[bloco[0], bloco[1], tamanho_bloco, tamanho_bloco])
         
+        
+def mensagem(msg, cor):
+    mensagem = fonte_estilo.render(msg, True, cor)
+    tela.blit(mensagem, [largura/6, altura/3])
+    
+def jogo():
+    game_over = False
+    game_close = False
+    
+    
+# Posocao inicial da cobra
+x1 = largura /2
+y1 = altura / 2
+
+# Corpo da cobra
+lisa_cobra = []
+comprimento_cobra =1
+
+# posicao da comida
+
+comida_x = round(random.randrange(0, largura - tamanho_bloco) / 10.0)
+comida_y = round(random.randrange(0, altura - tamanho_bloco) / 10.0) * 10.0
+
+
